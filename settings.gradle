@@ -1,0 +1,6 @@
+include 'lava'
+include 'example_lava'
+
+
+rootProject.name = 'lava-all'
+

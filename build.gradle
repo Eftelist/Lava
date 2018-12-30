@@ -1,0 +1,38 @@
+allprojects {
+  apply plugin: 'java'
+  apply plugin: 'maven'
+
+  group = 'myGroup'
+  version = '0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'spigotmc-repo'
+        url = 'https://hub.spigotmc.org/nexus/content/groups/public/'
+    }
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
+    maven {
+        name = 'destroytokyo'
+        url = 'https://repo.destroystokyo.com/repository/maven-public/'
+    }
+    maven {
+        name = 'dmoy2'
+        url = 'http://repo.dmulloy2.net/nexus/repository/public/'
+    }
+}
+
+import org.apache.tools.ant.filters.ReplaceTokens
+
+processResources {
+    from(sourceSets.main.resources.srcDirs) {
+        filter ReplaceTokens, tokens: [version: version]
+    }
+}

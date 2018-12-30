@@ -1,0 +1,29 @@
+plugins {
+     id 'com.github.johnrengelman.shadow' version '4.0.3'
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'spigotmc-repo'
+        url = 'https://hub.spigotmc.org/nexus/content/groups/public/'
+    }
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
+    maven {
+        name = 'destroytokyo'
+        url = 'https://repo.destroystokyo.com/repository/maven-public/'
+    }
+    maven {
+        name = 'dmoy2'
+        url = 'http://repo.dmulloy2.net/nexus/repository/public/'
+    }
+}
+
+dependencies {
+    compile project(':lava')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compileOnly 'org.spigotmc:spigot:1.12.2-R0.1-SNAPSHOT'
+}
