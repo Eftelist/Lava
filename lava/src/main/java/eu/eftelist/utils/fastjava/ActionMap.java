@@ -28,6 +28,14 @@ public abstract class ActionMap<T> implements Disposable {
     }
 
     /**
+     * @param key
+     * @return T value
+     */
+    public T getValue(String key){
+        return map.get(key);
+    }
+
+    /**
      * @return Values in the map
      */
     public ArrayList<T> getValues(){

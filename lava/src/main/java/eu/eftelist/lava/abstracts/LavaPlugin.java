@@ -6,6 +6,7 @@ import eu.eftelist.lava.interfaces.Disposable;
 import eu.eftelist.lava.abstracts.Module;
 import eu.eftelist.lava.maps.CommandMap;
 import eu.eftelist.lava.maps.ModuleMap;
+import eu.eftelist.lava.modules.DefaultLavaModule;
 import eu.eftelist.utils.fastjava.ActionMap;
 
 public abstract class LavaPlugin extends JavaPlugin implements Disposable {
@@ -17,6 +18,7 @@ public abstract class LavaPlugin extends JavaPlugin implements Disposable {
     @Override
     public void onEnable() {
         instance = this;
+        getModules().put("lava_mod", new DefaultLavaModule(this));
         onStartup();
     }
 

@@ -16,10 +16,25 @@ public abstract class Module implements Disposable {
         this.commandMap = plugin.getCommandMap();
     }
 
+    /**
+     * @return the plugin
+     */
+    public LavaPlugin getPlugin() {
+        return plugin;
+    }
+
+    /**
+     * @param Command
+     * Registers a command
+     */
     public void registerCommand(Command command){
         this.commandMap.put(command.getLabel(), command);
     }
 
+    /**
+     * @param BukkitEvent<T>
+     * Lamba function for registering events
+     */
     public <T extends Event> void registerEvent(BukkitEvent<T> event){
         this.plugin.getServer().getPluginManager().registerEvents(event, plugin);
     }
