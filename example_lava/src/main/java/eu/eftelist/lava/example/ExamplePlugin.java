@@ -7,12 +7,12 @@ public class ExamplePlugin extends LavaPlugin {
 
     @Override
     public void onStartup() {
-        getModules().put("test", new ExampleModule());
+        getModules().put("test", new ExampleModule(this));
     }
 
     @Override
     public void dispose(){
-        
+
     }
 
 }

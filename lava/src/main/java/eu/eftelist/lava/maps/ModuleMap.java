@@ -1,7 +1,7 @@
 package eu.eftelist.lava.maps;
 
 import eu.eftelist.utils.fastjava.ActionMap;
-import eu.eftelist.lava.interfaces.Module;
+import eu.eftelist.lava.abstracts.Module;
 
 public class ModuleMap extends ActionMap<Module> {
 
